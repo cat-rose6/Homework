@@ -1,0 +1,6 @@
+# KHAN_AMNA_KOMAL
+
+这是 KHAN_AMNA_KOMAL 的作业提交文件夹。
+
+请按作业编号建立子文件夹，例如 Lab01、Lab02。
+请仅在自己的文件夹内提交和修改作业。
