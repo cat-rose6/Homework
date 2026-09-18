@@ -1,6 +1,6 @@
 # FengBo
 
-这是 FengBo 的作业提交文件夹。
+This folder contains homework submissions by FengBo.
 
-请按作业编号建立子文件夹，例如 Lab01、Lab02。
-请仅在自己的文件夹内提交和修改作业。
+Create a separate subfolder for each assignment, such as Lab01 or Lab02.
+Only submit and modify files inside your own folder.
