@@ -1,0 +1,35 @@
+Lab01 - Amna Khan
+System-on-Chip Design - Lab 01
+
+FILES IN THIS FOLDER
+- Lab 01 Amna Komal Khan.pdf : report (backpropagation derivation for W3 and the accuracy result)
+- [YOUR_NOTEBOOK_NAME].ipynb : source code (three-linear-layer NN trained on MNIST)
+
+ENVIRONMENT
+- Platform: Google Colab (https://colab.research.google.com)
+- Runtime: GPU (Runtime > Change runtime type > Hardware accelerator > GPU)
+- Python and libraries: Colab's default Python 3 with PyTorch and torchvision
+  already installed. No extra installation is needed.
+  (If running elsewhere: pip install torch torchvision matplotlib)
+
+HOW TO RUN
+1. Open https://colab.research.google.com and choose File > Upload notebook.
+2. Upload [YOUR_NOTEBOOK_NAME].ipynb from this folder.
+3. Set the runtime to GPU: Runtime > Change runtime type > select GPU > Save.
+4. Run all cells: Runtime > Run all (or press Ctrl+F9).
+5. Wait for training to finish. The final test accuracy is printed at the end.
+
+DATASET
+- MNIST is downloaded automatically by torchvision (datasets.MNIST with
+  download=True) the first time the notebook runs. No manual download is needed.
+
+MODEL AND SETTINGS
+- Network: three linear (fully connected) layers
+- Dataset: MNIST
+- Epochs: [FILL IN]
+- Learning rate: [FILL IN]
+- Batch size: [FILL IN]
+
+EXPECTED OUTPUT
+- Training loss printed during training
+- Final test accuracy: [FILL IN, e.g. 97.xx%]
