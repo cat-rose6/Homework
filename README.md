@@ -4,9 +4,12 @@ This repository collects homework submissions for the System-on-Chip Design cour
 
 ## Submission Instructions
 
-Please send me the email address associated with your GitHub account. I will invite you to collaborate on the Homework repository. Accept the invitation before making changes.
-
-After you have access, add or update your own assignment directly in the Homework repository. Please keep your work in a clearly named folder or file so it can be easily identified.
+1. Send the email address associated with your GitHub account to the teaching assistant.
+2. Accept the collaborator invitation to the **Homework** repository.
+3. Open the folder corresponding to your name.
+4. Create a subfolder for each assignment, such as `Lab01` or `Lab02`.
+5. Upload your source code, report, and instructions for running the code to the appropriate assignment folder.
+6. Commit and push your changes directly to the Homework repository.
 
 **Important:** Only modify files inside your own folder. Do not modify, delete, or move files in anyone else’s folder. Contact the teaching assistant if you have any questions or run into problems.
 
