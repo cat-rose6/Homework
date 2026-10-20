@@ -4,15 +4,11 @@ This repository collects homework submissions for the System-on-Chip Design cour
 
 ## Submission Instructions
 
-1. Fork this repository to your own GitHub account.
-2. Open the folder corresponding to your name.
-3. Create a subfolder for each assignment, such as Lab01 or Lab02.
-4. Upload your source code, report, and instructions for running the code.
-5. Open a Pull Request targeting the main branch of this repository.
-6. Use the following Pull Request title format: Lab01 - YourName.
-7. Wait for the instructor or teaching assistant to review and merge your submission.
+Please send me the email address associated with your GitHub account. I will invite you to collaborate on the Homework repository. Accept the invitation before making changes.
 
-Only modify files inside your own folder.
+After you have access, add or update your own assignment directly in the Homework repository. Please keep your work in a clearly named folder or file so it can be easily identified.
+
+**Important:** Only modify files inside your own folder. Do not modify, delete, or move files in anyone else’s folder. Contact the teaching assistant if you have any questions or run into problems.
 
 
 ## Lab 01
