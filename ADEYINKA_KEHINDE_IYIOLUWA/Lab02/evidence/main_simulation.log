@@ -1,0 +1,5 @@
+VCD info: dumpfile build/neuron.vcd opened for output.
+HALT after 29 cycles, PC=24, neuron=27
+PASS: TinyAI-16 neuron=27
+tb_main.v:38: $finish called at 296000 (1ps)
+

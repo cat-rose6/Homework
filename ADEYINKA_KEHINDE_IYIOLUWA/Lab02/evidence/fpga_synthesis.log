@@ -1,0 +1,2195 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog tinyai16_cpu.v; hierarchy -check -top tinyai16_cpu; synth_ice40 -top tinyai16_cpu -json build/tinyai16.json; stat' --
+
+1. Executing Verilog-2005 frontend: tinyai16_cpu.v
+Parsing Verilog input from `tinyai16_cpu.v' to AST representation.
+Generating RTLIL representation for module `\tinyai16_cpu'.
+Warning: Replacing memory \dmem with list of registers. See tinyai16_cpu.v:50
+Warning: Replacing memory \regs with list of registers. See tinyai16_cpu.v:41
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+
+2.2. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+Removed 0 unused modules.
+
+3. Executing SYNTH_ICE40 pass.
+
+3.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+3.2. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+Removed 0 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:0$189'.
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$424 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$413 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$410 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$407 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$404 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$401 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$386 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$375 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$372 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$369 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$366 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$363 in module SB_DFFSR.
+Removed 1 dead cases from process $proc$tinyai16_cpu.v:0$186 in module tinyai16_cpu.
+Marked 1 switch rules as full_case in process $proc$tinyai16_cpu.v:0$186 in module tinyai16_cpu.
+Removed 1 dead cases from process $proc$tinyai16_cpu.v:0$183 in module tinyai16_cpu.
+Marked 1 switch rules as full_case in process $proc$tinyai16_cpu.v:0$183 in module tinyai16_cpu.
+Removed 1 dead cases from process $proc$tinyai16_cpu.v:0$180 in module tinyai16_cpu.
+Marked 1 switch rules as full_case in process $proc$tinyai16_cpu.v:0$180 in module tinyai16_cpu.
+Removed 9 dead cases from process $proc$tinyai16_cpu.v:36$22 in module tinyai16_cpu.
+Marked 22 switch rules as full_case in process $proc$tinyai16_cpu.v:36$22 in module tinyai16_cpu.
+Removed a total of 12 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 118 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$434'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$430'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$423'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$419'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$412'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$409'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$406'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$403'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$400'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$398'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$396'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$392'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$385'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$381'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$374'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$371'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$368'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$365'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$362'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$360'.
+  Set init value: \Q = 1'0
+Found init rule in `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$190'.
+  Set init value: \dmem[0] = 16'0000000000000000
+  Set init value: \dmem[1] = 16'0000000000000000
+  Set init value: \dmem[2] = 16'0000000000000000
+  Set init value: \dmem[3] = 16'0000000000000000
+  Set init value: \dmem[4] = 16'0000000000000010
+  Set init value: \dmem[5] = 16'0000000000000100
+  Set init value: \dmem[6] = 16'0000000000000000
+  Set init value: \dmem[7] = 16'0000000000000000
+  Set init value: \dmem[8] = 16'0000000000000001
+  Set init value: \dmem[9] = 16'0000000000000000
+  Set init value: \dmem[10] = 16'0000000000000000
+  Set init value: \dmem[11] = 16'0000000000000000
+  Set init value: \dmem[12] = 16'0000000000000011
+  Set init value: \dmem[13] = 16'0000000000000101
+  Set init value: \dmem[14] = 16'0000000000000000
+  Set init value: \dmem[15] = 16'0000000000000000
+  Set init value: \dmem[16] = 16'0000000000000000
+  Set init value: \dmem[17] = 16'0000000000000000
+  Set init value: \dmem[18] = 16'0000000000000000
+  Set init value: \dmem[19] = 16'0000000000000000
+  Set init value: \dmem[20] = 16'0000000000000000
+  Set init value: \dmem[21] = 16'0000000000000000
+  Set init value: \dmem[22] = 16'0000000000000000
+  Set init value: \dmem[23] = 16'0000000000000000
+  Set init value: \dmem[24] = 16'0000000000000000
+  Set init value: \dmem[25] = 16'0000000000000000
+  Set init value: \dmem[26] = 16'0000000000000000
+  Set init value: \dmem[27] = 16'0000000000000000
+  Set init value: \dmem[28] = 16'0000000000000000
+  Set init value: \dmem[29] = 16'0000000000000000
+  Set init value: \dmem[30] = 16'0000000000000000
+  Set init value: \dmem[31] = 16'0000000000000000
+  Set init value: \dmem[32] = 16'0000000000000000
+  Set init value: \dmem[33] = 16'0000000000000000
+  Set init value: \dmem[34] = 16'0000000000000000
+  Set init value: \dmem[35] = 16'0000000000000000
+  Set init value: \dmem[36] = 16'0000000000000000
+  Set init value: \dmem[37] = 16'0000000000000000
+  Set init value: \dmem[38] = 16'0000000000000000
+  Set init value: \dmem[39] = 16'0000000000000000
+  Set init value: \dmem[40] = 16'0000000000000000
+  Set init value: \dmem[41] = 16'0000000000000000
+  Set init value: \dmem[42] = 16'0000000000000000
+  Set init value: \dmem[43] = 16'0000000000000000
+  Set init value: \dmem[44] = 16'0000000000000000
+  Set init value: \dmem[45] = 16'0000000000000000
+  Set init value: \dmem[46] = 16'0000000000000000
+  Set init value: \dmem[47] = 16'0000000000000000
+  Set init value: \dmem[48] = 16'0000000000000000
+  Set init value: \dmem[49] = 16'0000000000000000
+  Set init value: \dmem[50] = 16'0000000000000000
+  Set init value: \dmem[51] = 16'0000000000000000
+  Set init value: \dmem[52] = 16'0000000000000000
+  Set init value: \dmem[53] = 16'0000000000000000
+  Set init value: \dmem[54] = 16'0000000000000000
+  Set init value: \dmem[55] = 16'0000000000000000
+  Set init value: \dmem[56] = 16'0000000000000000
+  Set init value: \dmem[57] = 16'0000000000000000
+  Set init value: \dmem[58] = 16'0000000000000000
+  Set init value: \dmem[59] = 16'0000000000000000
+  Set init value: \dmem[60] = 16'0000000000000000
+  Set init value: \dmem[61] = 16'0000000000000000
+  Set init value: \dmem[62] = 16'0000000000000000
+  Set init value: \dmem[63] = 16'0000000000000000
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431'.
+Found async reset \R in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420'.
+Found async reset \S in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$410'.
+Found async reset \R in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$404'.
+Found async reset \S in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393'.
+Found async reset \R in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382'.
+Found async reset \S in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$372'.
+Found async reset \R in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$366'.
+Found async reset \reset_n in `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~43 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$434'.
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$430'.
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$424'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$423'.
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$419'.
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$413'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$412'.
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$410'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$409'.
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$407'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$406'.
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$404'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$403'.
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$401'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$400'.
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$399'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$398'.
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$397'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$396'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$392'.
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$386'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$385'.
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$381'.
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$375'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$374'.
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$372'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$371'.
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$369'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$368'.
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$366'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$365'.
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$363'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$362'.
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$361'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$360'.
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$359'.
+Creating decoders for process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$190'.
+Creating decoders for process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$186'.
+     1/1: $1$mem2reg_rd$\regs$tinyai16_cpu.v:26$4_DATA[15:0]$188
+Creating decoders for process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$183'.
+     1/1: $1$mem2reg_rd$\regs$tinyai16_cpu.v:26$3_DATA[15:0]$185
+Creating decoders for process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$180'.
+     1/1: $1$mem2reg_rd$\regs$tinyai16_cpu.v:22$2_DATA[15:0]$182
+Creating decoders for process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+     1/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_DATA[15:0]$175
+     2/197: $5$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA[15:0]$173
+     3/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_ADDR[3:0]$169
+     4/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_DATA[15:0]$170
+     5/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA[15:0]$172
+     6/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_ADDR[3:0]$171
+     7/197: $5$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA[15:0]$166
+     8/197: $5$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA[15:0]$165
+     9/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_ADDR[3:0]$159
+    10/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_DATA[15:0]$160
+    11/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA[15:0]$164
+    12/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_ADDR[3:0]$163
+    13/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA[15:0]$162
+    14/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_ADDR[3:0]$161
+    15/197: $5$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA[15:0]$156
+    16/197: $5$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA[15:0]$155
+    17/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_ADDR[3:0]$149
+    18/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_DATA[15:0]$150
+    19/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA[15:0]$154
+    20/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_ADDR[3:0]$153
+    21/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA[15:0]$152
+    22/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_ADDR[3:0]$151
+    23/197: $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147
+    24/197: $5$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA[15:0]$146
+    25/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_ADDR[3:0]$142
+    26/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_DATA[15:0]$143
+    27/197: $4$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA[15:0]$145
+    28/197: $4$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_ADDR[5:0]$144
+    29/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_ADDR[3:0]$139
+    30/197: $4$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_DATA[15:0]$140
+    31/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_DATA[15:0]$111
+    32/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_ADDR[3:0]$110
+    33/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_DATA[15:0]$137
+    34/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_ADDR[3:0]$136
+    35/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA[15:0]$135
+    36/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_ADDR[3:0]$134
+    37/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_DATA[15:0]$133
+    38/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_ADDR[3:0]$132
+    39/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA[15:0]$131
+    40/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_ADDR[3:0]$130
+    41/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA[15:0]$129
+    42/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_ADDR[3:0]$128
+    43/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_DATA[15:0]$127
+    44/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_ADDR[3:0]$126
+    45/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA[15:0]$125
+    46/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_ADDR[3:0]$124
+    47/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA[15:0]$123
+    48/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_ADDR[3:0]$122
+    49/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_DATA[15:0]$121
+    50/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_ADDR[3:0]$120
+    51/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$119
+    52/197: $3$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_ADDR[3:0]$118
+    53/197: $3$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_DATA[15:0]$117
+    54/197: $3$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_ADDR[5:0]$116
+    55/197: $3$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA[15:0]$115
+    56/197: $3$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_ADDR[5:0]$114
+    57/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_DATA[15:0]$113
+    58/197: $3$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_ADDR[3:0]$112
+    59/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_DATA[15:0]$108
+    60/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_ADDR[3:0]$107
+    61/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA[15:0]$106
+    62/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_ADDR[3:0]$105
+    63/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_DATA[15:0]$104
+    64/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_ADDR[3:0]$103
+    65/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA[15:0]$102
+    66/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_ADDR[3:0]$101
+    67/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA[15:0]$100
+    68/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_ADDR[3:0]$99
+    69/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_DATA[15:0]$98
+    70/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_ADDR[3:0]$97
+    71/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA[15:0]$96
+    72/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_ADDR[3:0]$95
+    73/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA[15:0]$94
+    74/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_ADDR[3:0]$93
+    75/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_DATA[15:0]$92
+    76/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_ADDR[3:0]$91
+    77/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$90
+    78/197: $2$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_ADDR[3:0]$89
+    79/197: $2$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_DATA[15:0]$88
+    80/197: $2$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_ADDR[5:0]$87
+    81/197: $2$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA[15:0]$86
+    82/197: $2$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_ADDR[5:0]$85
+    83/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_DATA[15:0]$84
+    84/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_ADDR[3:0]$83
+    85/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_DATA[15:0]$82
+    86/197: $2$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_ADDR[3:0]$81
+    87/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_DATA[15:0]$79
+    88/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_ADDR[3:0]$78
+    89/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA[15:0]$77
+    90/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_ADDR[3:0]$76
+    91/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_DATA[15:0]$75
+    92/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_ADDR[3:0]$74
+    93/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA[15:0]$73
+    94/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_ADDR[3:0]$72
+    95/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA[15:0]$71
+    96/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_ADDR[3:0]$70
+    97/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_DATA[15:0]$69
+    98/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_ADDR[3:0]$68
+    99/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA[15:0]$67
+   100/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_ADDR[3:0]$66
+   101/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA[15:0]$65
+   102/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_ADDR[3:0]$64
+   103/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_DATA[15:0]$63
+   104/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_ADDR[3:0]$62
+   105/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$61
+   106/197: $1$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_ADDR[3:0]$60
+   107/197: $1$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_DATA[15:0]$59
+   108/197: $1$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_ADDR[5:0]$58
+   109/197: $1$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA[15:0]$57
+   110/197: $1$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_ADDR[5:0]$56
+   111/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_DATA[15:0]$55
+   112/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_ADDR[3:0]$54
+   113/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_DATA[15:0]$53
+   114/197: $1$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_ADDR[3:0]$52
+   115/197: $1\i[31:0]
+   116/197: $0\dmem[63][15:0]
+   117/197: $0\dmem[62][15:0]
+   118/197: $0\dmem[61][15:0]
+   119/197: $0\dmem[60][15:0]
+   120/197: $0\dmem[59][15:0]
+   121/197: $0\dmem[58][15:0]
+   122/197: $0\dmem[57][15:0]
+   123/197: $0\dmem[56][15:0]
+   124/197: $0\dmem[55][15:0]
+   125/197: $0\dmem[54][15:0]
+   126/197: $0\dmem[53][15:0]
+   127/197: $0\dmem[52][15:0]
+   128/197: $0\dmem[51][15:0]
+   129/197: $0\dmem[50][15:0]
+   130/197: $0\dmem[49][15:0]
+   131/197: $0\dmem[48][15:0]
+   132/197: $0\dmem[47][15:0]
+   133/197: $0\dmem[46][15:0]
+   134/197: $0\dmem[45][15:0]
+   135/197: $0\dmem[44][15:0]
+   136/197: $0\dmem[43][15:0]
+   137/197: $0\dmem[42][15:0]
+   138/197: $0\dmem[41][15:0]
+   139/197: $0\dmem[40][15:0]
+   140/197: $0\dmem[39][15:0]
+   141/197: $0\dmem[38][15:0]
+   142/197: $0\dmem[37][15:0]
+   143/197: $0\dmem[36][15:0]
+   144/197: $0\dmem[35][15:0]
+   145/197: $0\dmem[34][15:0]
+   146/197: $0\dmem[33][15:0]
+   147/197: $0\dmem[32][15:0]
+   148/197: $0\dmem[31][15:0]
+   149/197: $0\dmem[30][15:0]
+   150/197: $0\dmem[29][15:0]
+   151/197: $0\dmem[28][15:0]
+   152/197: $0\dmem[27][15:0]
+   153/197: $0\dmem[26][15:0]
+   154/197: $0\dmem[25][15:0]
+   155/197: $0\dmem[24][15:0]
+   156/197: $0\dmem[23][15:0]
+   157/197: $0\dmem[22][15:0]
+   158/197: $0\dmem[21][15:0]
+   159/197: $0\dmem[20][15:0]
+   160/197: $0\dmem[19][15:0]
+   161/197: $0\dmem[18][15:0]
+   162/197: $0\dmem[17][15:0]
+   163/197: $0\dmem[16][15:0]
+   164/197: $0\dmem[15][15:0]
+   165/197: $0\dmem[14][15:0]
+   166/197: $0\dmem[13][15:0]
+   167/197: $0\dmem[12][15:0]
+   168/197: $0\dmem[11][15:0]
+   169/197: $0\dmem[10][15:0]
+   170/197: $0\dmem[9][15:0]
+   171/197: $0\dmem[8][15:0]
+   172/197: $0\dmem[7][15:0]
+   173/197: $0\dmem[6][15:0]
+   174/197: $0\dmem[5][15:0]
+   175/197: $0\dmem[4][15:0]
+   176/197: $0\dmem[3][15:0]
+   177/197: $0\dmem[2][15:0]
+   178/197: $0\dmem[1][15:0]
+   179/197: $0\dmem[0][15:0]
+   180/197: $0\regs[15][15:0]
+   181/197: $0\regs[14][15:0]
+   182/197: $0\regs[13][15:0]
+   183/197: $0\regs[12][15:0]
+   184/197: $0\regs[11][15:0]
+   185/197: $0\regs[10][15:0]
+   186/197: $0\regs[9][15:0]
+   187/197: $0\regs[8][15:0]
+   188/197: $0\regs[7][15:0]
+   189/197: $0\regs[6][15:0]
+   190/197: $0\regs[5][15:0]
+   191/197: $0\regs[4][15:0]
+   192/197: $0\regs[3][15:0]
+   193/197: $0\regs[2][15:0]
+   194/197: $0\regs[1][15:0]
+   195/197: $0\regs[0][15:0]
+   196/197: $0\pc[7:0]
+   197/197: $0\halted[0:0]
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:26$4_DATA' from process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$186'.
+No latch inferred for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:26$3_DATA' from process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$183'.
+No latch inferred for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:22$2_DATA' from process `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$180'.
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431'.
+  created $adff cell `$procdff$5593' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$424'.
+  created $dff cell `$procdff$5594' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420'.
+  created $adff cell `$procdff$5595' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$413'.
+  created $dff cell `$procdff$5596' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$410'.
+  created $adff cell `$procdff$5597' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$407'.
+  created $dff cell `$procdff$5598' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$404'.
+  created $adff cell `$procdff$5599' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$401'.
+  created $dff cell `$procdff$5600' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$399'.
+  created $dff cell `$procdff$5601' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$397'.
+  created $dff cell `$procdff$5602' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393'.
+  created $adff cell `$procdff$5603' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$386'.
+  created $dff cell `$procdff$5604' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382'.
+  created $adff cell `$procdff$5605' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$375'.
+  created $dff cell `$procdff$5606' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$372'.
+  created $adff cell `$procdff$5607' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$369'.
+  created $dff cell `$procdff$5608' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$366'.
+  created $adff cell `$procdff$5609' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$363'.
+  created $dff cell `$procdff$5610' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$361'.
+  created $dff cell `$procdff$5611' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$359'.
+  created $dff cell `$procdff$5612' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\halted' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5613' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\pc' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5614' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\i' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5615' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[0]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5616' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[1]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5617' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[2]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5618' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[3]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5619' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[4]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5620' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[5]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5621' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[6]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5622' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[7]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5623' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[8]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5624' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[9]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5625' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[10]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5626' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[11]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5627' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[12]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5628' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[13]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5629' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[14]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5630' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\regs[15]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5631' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.\dmem[0]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5634' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[1]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5637' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[2]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5640' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[3]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5643' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[4]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5646' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[5]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5649' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[6]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5652' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[7]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5655' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[8]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5658' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[9]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5661' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[10]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5664' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[11]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5667' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[12]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5670' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[13]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5673' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[14]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5676' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[15]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5679' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[16]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5682' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[17]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5685' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[18]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5688' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[19]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5691' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[20]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5694' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[21]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5697' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[22]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5700' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[23]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5703' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[24]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5706' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[25]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5709' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[26]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5712' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[27]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5715' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[28]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5718' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[29]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5721' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[30]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5724' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[31]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5727' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[32]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5730' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[33]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5733' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[34]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5736' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[35]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5739' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[36]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5742' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[37]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5745' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[38]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5748' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[39]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5751' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[40]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5754' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[41]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5757' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[42]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5760' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[43]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5763' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[44]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5766' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[45]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5769' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[46]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5772' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[47]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5775' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[48]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5778' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[49]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5781' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[50]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5784' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[51]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5787' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[52]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5790' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[53]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5793' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[54]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5796' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[55]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5799' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[56]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5802' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[57]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5805' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[58]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5808' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[59]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5811' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[60]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5814' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[61]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5817' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[62]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5820' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.\dmem[63]' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $dff cell `$procdff$5823' with positive edge clock.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5824' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:46$5_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5825' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5826' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:48$6_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5827' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5828' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\dmem$tinyai16_cpu.v:48$7_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5829' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5830' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\dmem$tinyai16_cpu.v:50$8_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5831' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5832' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5833' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5834' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:52$10_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5835' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5836' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:52$11_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5837' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5838' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:52$12_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5839' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5840' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:54$13_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5841' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5842' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:54$14_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5843' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5844' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:54$15_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5845' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5846' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_wr$\regs$tinyai16_cpu.v:56$16_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5847' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5848' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:56$17_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5849' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_ADDR' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5850' with positive edge clock and negative level reset.
+Creating register for signal `\tinyai16_cpu.$mem2reg_rd$\regs$tinyai16_cpu.v:57$18_DATA' using process `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+  created $adff cell `$procdff$5851' with positive edge clock and negative level reset.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$434'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431'.
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$431'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$430'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$424'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$424'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$423'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$420'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$419'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$413'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$413'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$412'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$410'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$409'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$407'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$407'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$406'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$404'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$403'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$401'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$401'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$400'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$399'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$399'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$398'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$397'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$396'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$393'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$392'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$386'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$386'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$385'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$382'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$381'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$375'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$375'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$374'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$372'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$371'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$369'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$369'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$368'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$366'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$365'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$363'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$363'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$362'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$361'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$361'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$360'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$359'.
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:0$190'.
+Found and cleaned up 1 empty switch in `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$186'.
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:0$186'.
+Found and cleaned up 1 empty switch in `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$183'.
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:0$183'.
+Found and cleaned up 1 empty switch in `\tinyai16_cpu.$proc$tinyai16_cpu.v:0$180'.
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:0$180'.
+Found and cleaned up 22 empty switches in `\tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+Removing empty process `tinyai16_cpu.$proc$tinyai16_cpu.v:36$22'.
+Cleaned up 43 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~237 debug messages>
+
+3.4. Executing FLATTEN pass (flatten design).
+
+3.5. Executing TRIBUF pass.
+
+3.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 427 unused cells and 1009 unused wires.
+<suppressed ~429 debug messages>
+
+3.9. Executing CHECK pass (checking for obvious problems).
+Checking module tinyai16_cpu...
+Found and reported 0 problems.
+
+3.10. Executing OPT pass (performing simple optimizations).
+
+3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~1224 debug messages>
+Removed a total of 408 cells.
+
+3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$5591: \halted -> 1'1
+      Replacing known input bits on port A of cell $procmux$5589: \halted -> 1'0
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1031.
+    dead port 1/2 on $mux $procmux$1033.
+    dead port 2/2 on $mux $procmux$1108.
+    dead port 2/2 on $mux $procmux$1110.
+    dead port 1/2 on $mux $procmux$1112.
+Removed 5 multiplexer ports.
+<suppressed ~93 debug messages>
+
+3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 422 unused wires.
+<suppressed ~1 debug messages>
+
+3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~94 debug messages>
+
+3.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.10.16. Finished OPT passes. (There is nothing left to do.)
+
+3.11. Executing FSM pass (extract and optimize FSM).
+
+3.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~94 debug messages>
+
+3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$5823 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[63]).
+Adding EN signal on $procdff$5820 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[62]).
+Adding EN signal on $procdff$5817 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[61]).
+Adding EN signal on $procdff$5814 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[60]).
+Adding EN signal on $procdff$5811 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[59]).
+Adding EN signal on $procdff$5808 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[58]).
+Adding EN signal on $procdff$5805 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[57]).
+Adding EN signal on $procdff$5802 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[56]).
+Adding EN signal on $procdff$5799 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[55]).
+Adding EN signal on $procdff$5796 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[54]).
+Adding EN signal on $procdff$5793 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[53]).
+Adding EN signal on $procdff$5790 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[52]).
+Adding EN signal on $procdff$5787 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[51]).
+Adding EN signal on $procdff$5784 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[50]).
+Adding EN signal on $procdff$5781 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[49]).
+Adding EN signal on $procdff$5778 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[48]).
+Adding EN signal on $procdff$5775 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[47]).
+Adding EN signal on $procdff$5772 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[46]).
+Adding EN signal on $procdff$5769 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[45]).
+Adding EN signal on $procdff$5766 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[44]).
+Adding EN signal on $procdff$5763 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[43]).
+Adding EN signal on $procdff$5760 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[42]).
+Adding EN signal on $procdff$5757 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[41]).
+Adding EN signal on $procdff$5754 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[40]).
+Adding EN signal on $procdff$5751 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[39]).
+Adding EN signal on $procdff$5748 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[38]).
+Adding EN signal on $procdff$5745 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[37]).
+Adding EN signal on $procdff$5742 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[36]).
+Adding EN signal on $procdff$5739 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[35]).
+Adding EN signal on $procdff$5736 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[34]).
+Adding EN signal on $procdff$5733 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[33]).
+Adding EN signal on $procdff$5730 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[32]).
+Adding EN signal on $procdff$5727 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[31]).
+Adding EN signal on $procdff$5724 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[30]).
+Adding EN signal on $procdff$5721 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[29]).
+Adding EN signal on $procdff$5718 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[28]).
+Adding EN signal on $procdff$5715 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[27]).
+Adding EN signal on $procdff$5712 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[26]).
+Adding EN signal on $procdff$5709 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[25]).
+Adding EN signal on $procdff$5706 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[24]).
+Adding EN signal on $procdff$5703 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[23]).
+Adding EN signal on $procdff$5700 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[22]).
+Adding EN signal on $procdff$5697 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[21]).
+Adding EN signal on $procdff$5694 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[20]).
+Adding EN signal on $procdff$5691 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[19]).
+Adding EN signal on $procdff$5688 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[18]).
+Adding EN signal on $procdff$5685 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[17]).
+Adding EN signal on $procdff$5682 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[16]).
+Adding EN signal on $procdff$5679 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[15]).
+Adding EN signal on $procdff$5676 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[14]).
+Adding EN signal on $procdff$5673 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[13]).
+Adding EN signal on $procdff$5670 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[12]).
+Adding EN signal on $procdff$5667 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[11]).
+Adding EN signal on $procdff$5664 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[10]).
+Adding EN signal on $procdff$5661 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[9]).
+Adding EN signal on $procdff$5658 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[8]).
+Adding EN signal on $procdff$5655 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[7]).
+Adding EN signal on $procdff$5652 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[6]).
+Adding EN signal on $procdff$5649 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[5]).
+Adding EN signal on $procdff$5646 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[4]).
+Adding EN signal on $procdff$5643 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[3]).
+Adding EN signal on $procdff$5640 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[2]).
+Adding EN signal on $procdff$5637 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[1]).
+Adding EN signal on $procdff$5634 ($dff) from module tinyai16_cpu (D = $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147, Q = \dmem[0]).
+Adding EN signal on $procdff$5631 ($adff) from module tinyai16_cpu (D = $procmux$4412_Y, Q = \regs[15]).
+Adding EN signal on $procdff$5630 ($adff) from module tinyai16_cpu (D = $procmux$4449_Y, Q = \regs[14]).
+Adding EN signal on $procdff$5629 ($adff) from module tinyai16_cpu (D = $procmux$4491_Y, Q = \regs[13]).
+Adding EN signal on $procdff$5628 ($adff) from module tinyai16_cpu (D = $procmux$4538_Y, Q = \regs[12]).
+Adding EN signal on $procdff$5627 ($adff) from module tinyai16_cpu (D = $procmux$4590_Y, Q = \regs[11]).
+Adding EN signal on $procdff$5626 ($adff) from module tinyai16_cpu (D = $procmux$4647_Y, Q = \regs[10]).
+Adding EN signal on $procdff$5625 ($adff) from module tinyai16_cpu (D = $procmux$4709_Y, Q = \regs[9]).
+Adding EN signal on $procdff$5624 ($adff) from module tinyai16_cpu (D = $procmux$4776_Y, Q = \regs[8]).
+Adding EN signal on $procdff$5623 ($adff) from module tinyai16_cpu (D = $procmux$4848_Y, Q = \regs[7]).
+Adding EN signal on $procdff$5622 ($adff) from module tinyai16_cpu (D = $procmux$4925_Y, Q = \regs[6]).
+Adding EN signal on $procdff$5621 ($adff) from module tinyai16_cpu (D = $procmux$5007_Y, Q = \regs[5]).
+Adding EN signal on $procdff$5620 ($adff) from module tinyai16_cpu (D = $procmux$5094_Y, Q = \regs[4]).
+Adding EN signal on $procdff$5619 ($adff) from module tinyai16_cpu (D = $procmux$5186_Y, Q = \regs[3]).
+Adding EN signal on $procdff$5618 ($adff) from module tinyai16_cpu (D = $procmux$5283_Y, Q = \regs[2]).
+Adding EN signal on $procdff$5617 ($adff) from module tinyai16_cpu (D = $procmux$5385_Y, Q = \regs[1]).
+Adding EN signal on $procdff$5616 ($adff) from module tinyai16_cpu (D = $procmux$5492_Y, Q = \regs[0]).
+Adding EN signal on $procdff$5614 ($adff) from module tinyai16_cpu (D = $procmux$5581_Y, Q = \pc).
+
+3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 273 unused cells and 273 unused wires.
+<suppressed ~274 debug messages>
+
+3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~17 debug messages>
+
+3.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+3.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~510 debug messages>
+Removed a total of 170 cells.
+
+3.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 170 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+3.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.12.23. Finished OPT passes. (There is nothing left to do.)
+
+3.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 24 address bits (of 32) from memory init port tinyai16_cpu.$meminit$\imem$tinyai16_cpu.v:0$179 (imem).
+Removed top 10 bits (of 16) from port Y of cell tinyai16_cpu.$add$tinyai16_cpu.v:22$20 ($add).
+Removed top 10 bits (of 16) from port A of cell tinyai16_cpu.$add$tinyai16_cpu.v:22$20 ($add).
+Removed top 10 bits (of 16) from port B of cell tinyai16_cpu.$add$tinyai16_cpu.v:22$20 ($add).
+Removed top 16 bits (of 32) from port A of cell tinyai16_cpu.$mul$tinyai16_cpu.v:26$21 ($mul).
+Removed top 16 bits (of 32) from port B of cell tinyai16_cpu.$mul$tinyai16_cpu.v:26$21 ($mul).
+Removed top 16 bits (of 32) from port Y of cell tinyai16_cpu.$mul$tinyai16_cpu.v:26$21 ($mul).
+Removed top 7 bits (of 8) from port B of cell tinyai16_cpu.$add$tinyai16_cpu.v:43$109 ($add).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$624_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$625_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$626_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$627_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$628_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$629_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell tinyai16_cpu.$procmux$630_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$641_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$642_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$643_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$644_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$645_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$646_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell tinyai16_cpu.$procmux$647_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1023_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1024_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1025_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1026_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1027_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1028_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell tinyai16_cpu.$procmux$1029_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell tinyai16_cpu.$procmux$1032_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1076_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1077_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1078_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1079_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1080_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1081_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1082_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1083_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1084_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1085_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1086_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1087_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1088_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1089_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1090_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1091_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1092_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1093_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1094_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1095_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1096_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1097_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1098_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1099_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1100_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1101_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1102_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1103_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1104_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1105_CMP0 ($eq).
+Removed top 5 bits (of 6) from port B of cell tinyai16_cpu.$procmux$1106_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell tinyai16_cpu.$procmux$1111_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell tinyai16_cpu.$procmux$4425_CMP0 ($eq).
+Removed top 16 bits (of 32) from wire tinyai16_cpu.product.
+
+3.14. Executing PEEPOPT pass (run peephole optimizers).
+
+3.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.16. Executing SHARE pass (SAT-based resource sharing).
+
+3.17. Executing TECHMAP pass (map to technology primitives).
+
+3.17.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module tinyai16_cpu:
+  creating $macc model for $add$tinyai16_cpu.v:22$20 ($add).
+  creating $macc model for $add$tinyai16_cpu.v:43$109 ($add).
+  creating $macc model for $add$tinyai16_cpu.v:52$157 ($add).
+  creating $macc model for $add$tinyai16_cpu.v:56$174 ($add).
+  creating $macc model for $add$tinyai16_cpu.v:58$178 ($add).
+  creating $macc model for $mul$tinyai16_cpu.v:26$21 ($mul).
+  creating $macc model for $sub$tinyai16_cpu.v:54$167 ($sub).
+  merging $macc model for $mul$tinyai16_cpu.v:26$21 into $add$tinyai16_cpu.v:56$174.
+  creating $alu model for $macc $sub$tinyai16_cpu.v:54$167.
+  creating $alu model for $macc $add$tinyai16_cpu.v:58$178.
+  creating $alu model for $macc $add$tinyai16_cpu.v:52$157.
+  creating $alu model for $macc $add$tinyai16_cpu.v:43$109.
+  creating $alu model for $macc $add$tinyai16_cpu.v:22$20.
+  creating $macc cell for $add$tinyai16_cpu.v:56$174: $auto$alumacc.cc:365:replace_macc$6613
+  creating $alu cell for $add$tinyai16_cpu.v:22$20: $auto$alumacc.cc:485:replace_alu$6614
+  creating $alu cell for $add$tinyai16_cpu.v:43$109: $auto$alumacc.cc:485:replace_alu$6617
+  creating $alu cell for $add$tinyai16_cpu.v:52$157: $auto$alumacc.cc:485:replace_alu$6620
+  creating $alu cell for $add$tinyai16_cpu.v:58$178: $auto$alumacc.cc:485:replace_alu$6623
+  creating $alu cell for $sub$tinyai16_cpu.v:54$167: $auto$alumacc.cc:485:replace_alu$6626
+  created 5 $alu and 1 $macc cells.
+
+3.21. Executing OPT pass (performing simple optimizations).
+
+3.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+3.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+3.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+3.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.21.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.21.16. Finished OPT passes. (There is nothing left to do.)
+
+3.22. Executing MEMORY pass.
+
+3.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\imem'[0] in module `\tinyai16_cpu': no output FF found.
+Checking read port address `\imem'[0] in module `\tinyai16_cpu': address FF has async set and/or reset, not supported.
+
+3.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+using FF mapping for memory tinyai16_cpu.imem
+<suppressed ~14 debug messages>
+
+3.25. Executing TECHMAP pass (map to technology primitives).
+
+3.25.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+3.25.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+3.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.26. Executing ICE40_BRAMINIT pass.
+
+3.27. Executing OPT pass (performing simple optimizations).
+
+3.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~199 debug messages>
+
+3.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+3.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 2 unused cells and 193 unused wires.
+<suppressed ~3 debug messages>
+
+3.27.5. Finished fast OPT passes.
+
+3.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \imem in module \tinyai16_cpu:
+  created 256 $dff cells and 0 static cells of width 16.
+  read interface: 0 $dff and 255 $mux cells.
+  write interface: 0 write mux blocks.
+
+3.29. Executing OPT pass (performing simple optimizations).
+
+3.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~228 debug messages>
+
+3.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+3.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][4]$7044:
+      Old ports: A=16'0011000011100000, B=16'1011000001001010, Y=$memory\imem$rdmux[0][6][2]$a$6847
+      New ports: A=2'10, B=2'01, Y={ $memory\imem$rdmux[0][6][2]$a$6847 [5] $memory\imem$rdmux[0][6][2]$a$6847 [1] }
+      New connections: { $memory\imem$rdmux[0][6][2]$a$6847 [15:6] $memory\imem$rdmux[0][6][2]$a$6847 [4:2] $memory\imem$rdmux[0][6][2]$a$6847 [0] } = { $memory\imem$rdmux[0][6][2]$a$6847 [1] 7'0110000 $memory\imem$rdmux[0][6][2]$a$6847 [5] 2'10 $memory\imem$rdmux[0][6][2]$a$6847 [1] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][6]$7050:
+      Old ports: A=16'0101000100100000, B=16'0001010000000011, Y=$memory\imem$rdmux[0][6][3]$a$6850
+      New ports: A=2'10, B=2'01, Y={ $memory\imem$rdmux[0][6][3]$a$6850 [5] $memory\imem$rdmux[0][6][3]$a$6850 [0] }
+      New connections: { $memory\imem$rdmux[0][6][3]$a$6850 [15:6] $memory\imem$rdmux[0][6][3]$a$6850 [4:1] } = { 1'0 $memory\imem$rdmux[0][6][3]$a$6850 [5] 3'010 $memory\imem$rdmux[0][6][3]$a$6850 [0] 1'0 $memory\imem$rdmux[0][6][3]$a$6850 [5] 5'00000 $memory\imem$rdmux[0][6][3]$a$6850 [0] }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][7]$7053:
+      Old ports: A=16'0001011000000001, B=16'1001010101010110, Y=$memory\imem$rdmux[0][6][3]$b$6851
+      New ports: A=2'01, B=2'10, Y=$memory\imem$rdmux[0][6][3]$b$6851 [1:0]
+      New connections: $memory\imem$rdmux[0][6][3]$b$6851 [15:2] = { $memory\imem$rdmux[0][6][3]$b$6851 [1] 5'00101 $memory\imem$rdmux[0][6][3]$b$6851 [0] $memory\imem$rdmux[0][6][3]$b$6851 [1] 1'0 $memory\imem$rdmux[0][6][3]$b$6851 [1] 1'0 $memory\imem$rdmux[0][6][3]$b$6851 [1] 1'0 $memory\imem$rdmux[0][6][3]$b$6851 [1] }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][10]$7062:
+      Old ports: A=16'0001110000001110, B=16'0011111111011111, Y=$memory\imem$rdmux[0][6][5]$a$6856
+      New ports: A=1'0, B=1'1, Y=$memory\imem$rdmux[0][6][5]$a$6856 [0]
+      New connections: $memory\imem$rdmux[0][6][5]$a$6856 [15:1] = { 2'00 $memory\imem$rdmux[0][6][5]$a$6856 [0] 3'111 $memory\imem$rdmux[0][6][5]$a$6856 [0] $memory\imem$rdmux[0][6][5]$a$6856 [0] $memory\imem$rdmux[0][6][5]$a$6856 [0] $memory\imem$rdmux[0][6][5]$a$6856 [0] 1'0 $memory\imem$rdmux[0][6][5]$a$6856 [0] 3'111 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][5]$7047:
+      Old ports: A=16'1011000001101100, B=16'0001001000010000, Y=$memory\imem$rdmux[0][6][2]$b$6848
+      New ports: A=2'01, B=2'10, Y={ $memory\imem$rdmux[0][6][2]$b$6848 [4] $memory\imem$rdmux[0][6][2]$b$6848 [2] }
+      New connections: { $memory\imem$rdmux[0][6][2]$b$6848 [15:5] $memory\imem$rdmux[0][6][2]$b$6848 [3] $memory\imem$rdmux[0][6][2]$b$6848 [1:0] } = { $memory\imem$rdmux[0][6][2]$b$6848 [2] 1'0 $memory\imem$rdmux[0][6][2]$b$6848 [2] 3'100 $memory\imem$rdmux[0][6][2]$b$6848 [4] 2'00 $memory\imem$rdmux[0][6][2]$b$6848 [2] $memory\imem$rdmux[0][6][2]$b$6848 [2] $memory\imem$rdmux[0][6][2]$b$6848 [2] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][0]$7032:
+      Old ports: A=16'0000000001100011, B=16'0000001000000100, Y=$memory\imem$rdmux[0][6][0]$a$6841
+      New ports: A=2'01, B=2'10, Y={ $memory\imem$rdmux[0][6][0]$a$6841 [2] $memory\imem$rdmux[0][6][0]$a$6841 [0] }
+      New connections: { $memory\imem$rdmux[0][6][0]$a$6841 [15:3] $memory\imem$rdmux[0][6][0]$a$6841 [1] } = { 6'000000 $memory\imem$rdmux[0][6][0]$a$6841 [2] 2'00 $memory\imem$rdmux[0][6][0]$a$6841 [0] $memory\imem$rdmux[0][6][0]$a$6841 [0] 2'00 $memory\imem$rdmux[0][6][0]$a$6841 [0] }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][1]$7035:
+      Old ports: A=16'0010010000100000, B=16'0010011000100001, Y=$memory\imem$rdmux[0][6][0]$b$6842
+      New ports: A=1'0, B=1'1, Y=$memory\imem$rdmux[0][6][0]$b$6842 [0]
+      New connections: $memory\imem$rdmux[0][6][0]$b$6842 [15:1] = { 6'001001 $memory\imem$rdmux[0][6][0]$b$6842 [0] 8'00010000 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][9]$7059:
+      Old ports: A=16'0001101111111001, B=16'1011101101110110, Y=$memory\imem$rdmux[0][6][4]$b$6854
+      New ports: A=2'01, B=2'10, Y=$memory\imem$rdmux[0][6][4]$b$6854 [1:0]
+      New connections: $memory\imem$rdmux[0][6][4]$b$6854 [15:2] = { $memory\imem$rdmux[0][6][4]$b$6854 [1] 1'0 $memory\imem$rdmux[0][6][4]$b$6854 [1] 5'11011 $memory\imem$rdmux[0][6][4]$b$6854 [0] 3'111 $memory\imem$rdmux[0][6][4]$b$6854 [0] $memory\imem$rdmux[0][6][4]$b$6854 [1] }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][3]$7041:
+      Old ports: A=16'0010110010000001, B=16'0000111000001000, Y=$memory\imem$rdmux[0][6][1]$b$6845
+      New ports: A=2'01, B=2'10, Y={ $memory\imem$rdmux[0][6][1]$b$6845 [3] $memory\imem$rdmux[0][6][1]$b$6845 [0] }
+      New connections: { $memory\imem$rdmux[0][6][1]$b$6845 [15:4] $memory\imem$rdmux[0][6][1]$b$6845 [2:1] } = { 2'00 $memory\imem$rdmux[0][6][1]$b$6845 [0] 3'011 $memory\imem$rdmux[0][6][1]$b$6845 [3] 1'0 $memory\imem$rdmux[0][6][1]$b$6845 [0] 5'00000 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][2]$7038:
+      Old ports: A=16'0000100000001100, B=16'0010101010000000, Y=$memory\imem$rdmux[0][6][1]$a$6844
+      New ports: A=2'01, B=2'10, Y={ $memory\imem$rdmux[0][6][1]$a$6844 [7] $memory\imem$rdmux[0][6][1]$a$6844 [2] }
+      New connections: { $memory\imem$rdmux[0][6][1]$a$6844 [15:8] $memory\imem$rdmux[0][6][1]$a$6844 [6:3] $memory\imem$rdmux[0][6][1]$a$6844 [1:0] } = { 2'00 $memory\imem$rdmux[0][6][1]$a$6844 [7] 3'010 $memory\imem$rdmux[0][6][1]$a$6844 [7] 4'0000 $memory\imem$rdmux[0][6][1]$a$6844 [2] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][8]$7056:
+      Old ports: A=16'1101010111111110, B=16'0111100100010110, Y=$memory\imem$rdmux[0][6][4]$a$6853
+      New ports: A=2'01, B=2'10, Y={ $memory\imem$rdmux[0][6][4]$a$6853 [11] $memory\imem$rdmux[0][6][4]$a$6853 [3] }
+      New connections: { $memory\imem$rdmux[0][6][4]$a$6853 [15:12] $memory\imem$rdmux[0][6][4]$a$6853 [10:4] $memory\imem$rdmux[0][6][4]$a$6853 [2:0] } = { $memory\imem$rdmux[0][6][4]$a$6853 [3] 1'1 $memory\imem$rdmux[0][6][4]$a$6853 [11] 1'1 $memory\imem$rdmux[0][6][4]$a$6853 [3] 2'01 $memory\imem$rdmux[0][6][4]$a$6853 [3] $memory\imem$rdmux[0][6][4]$a$6853 [3] $memory\imem$rdmux[0][6][4]$a$6853 [3] 4'1110 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][7][11]$7065:
+      Old ports: A=16'0001110000010010, B=16'0101100111011111, Y=$memory\imem$rdmux[0][6][5]$b$6857
+      New ports: A=2'10, B=2'01, Y={ $memory\imem$rdmux[0][6][5]$b$6857 [10] $memory\imem$rdmux[0][6][5]$b$6857 [0] }
+      New connections: { $memory\imem$rdmux[0][6][5]$b$6857 [15:11] $memory\imem$rdmux[0][6][5]$b$6857 [9:1] } = { 1'0 $memory\imem$rdmux[0][6][5]$b$6857 [0] 4'0110 $memory\imem$rdmux[0][6][5]$b$6857 [0] $memory\imem$rdmux[0][6][5]$b$6857 [0] $memory\imem$rdmux[0][6][5]$b$6857 [0] 2'01 $memory\imem$rdmux[0][6][5]$b$6857 [0] $memory\imem$rdmux[0][6][5]$b$6857 [0] 1'1 }
+  Optimizing cells in module \tinyai16_cpu.
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][2]$6846:
+      Old ports: A=$memory\imem$rdmux[0][6][2]$a$6847, B=$memory\imem$rdmux[0][6][2]$b$6848, Y=$memory\imem$rdmux[0][5][1]$a$6748
+      New ports: A={ $memory\imem$rdmux[0][6][2]$a$6847 [5] 1'1 $memory\imem$rdmux[0][6][2]$a$6847 [5] 1'0 $memory\imem$rdmux[0][6][2]$a$6847 [1] 1'0 $memory\imem$rdmux[0][6][2]$a$6847 [1] }, B={ 1'0 $memory\imem$rdmux[0][6][2]$b$6848 [2] $memory\imem$rdmux[0][6][2]$b$6848 [2] $memory\imem$rdmux[0][6][2]$b$6848 [4] $memory\imem$rdmux[0][6][2]$b$6848 [2] $memory\imem$rdmux[0][6][2]$b$6848 [2] 1'0 }, Y=$memory\imem$rdmux[0][5][1]$a$6748 [7:1]
+      New connections: { $memory\imem$rdmux[0][5][1]$a$6748 [15:8] $memory\imem$rdmux[0][5][1]$a$6748 [0] } = { $memory\imem$rdmux[0][5][1]$a$6748 [3] 1'0 $memory\imem$rdmux[0][5][1]$a$6748 [6] 3'100 $memory\imem$rdmux[0][5][1]$a$6748 [4] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][5]$6855:
+      Old ports: A=$memory\imem$rdmux[0][6][5]$a$6856, B=$memory\imem$rdmux[0][6][5]$b$6857, Y=$memory\imem$rdmux[0][5][2]$b$6752
+      New ports: A={ 2'01 $memory\imem$rdmux[0][6][5]$a$6856 [0] $memory\imem$rdmux[0][6][5]$a$6856 [0] 1'1 $memory\imem$rdmux[0][6][5]$a$6856 [0] }, B={ $memory\imem$rdmux[0][6][5]$b$6857 [0] $memory\imem$rdmux[0][6][5]$b$6857 [10] 2'01 $memory\imem$rdmux[0][6][5]$b$6857 [0] $memory\imem$rdmux[0][6][5]$b$6857 [0] }, Y={ $memory\imem$rdmux[0][5][2]$b$6752 [14] $memory\imem$rdmux[0][5][2]$b$6752 [10:9] $memory\imem$rdmux[0][5][2]$b$6752 [4] $memory\imem$rdmux[0][5][2]$b$6752 [2] $memory\imem$rdmux[0][5][2]$b$6752 [0] }
+      New connections: { $memory\imem$rdmux[0][5][2]$b$6752 [15] $memory\imem$rdmux[0][5][2]$b$6752 [13:11] $memory\imem$rdmux[0][5][2]$b$6752 [8:5] $memory\imem$rdmux[0][5][2]$b$6752 [3] $memory\imem$rdmux[0][5][2]$b$6752 [1] } = { 1'0 $memory\imem$rdmux[0][5][2]$b$6752 [9] 2'11 $memory\imem$rdmux[0][5][2]$b$6752 [0] $memory\imem$rdmux[0][5][2]$b$6752 [0] $memory\imem$rdmux[0][5][2]$b$6752 [0] 1'0 $memory\imem$rdmux[0][5][2]$b$6752 [2] 1'1 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][0]$6840:
+      Old ports: A=$memory\imem$rdmux[0][6][0]$a$6841, B=$memory\imem$rdmux[0][6][0]$b$6842, Y=$memory\imem$rdmux[0][5][0]$a$6745
+      New ports: A={ 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [2] $memory\imem$rdmux[0][6][0]$a$6841 [0] $memory\imem$rdmux[0][6][0]$a$6841 [2] $memory\imem$rdmux[0][6][0]$a$6841 [0] $memory\imem$rdmux[0][6][0]$a$6841 [0] }, B={ 1'1 $memory\imem$rdmux[0][6][0]$b$6842 [0] 3'100 $memory\imem$rdmux[0][6][0]$b$6842 [0] }, Y={ $memory\imem$rdmux[0][5][0]$a$6745 [10:9] $memory\imem$rdmux[0][5][0]$a$6745 [5] $memory\imem$rdmux[0][5][0]$a$6745 [2:0] }
+      New connections: { $memory\imem$rdmux[0][5][0]$a$6745 [15:11] $memory\imem$rdmux[0][5][0]$a$6745 [8:6] $memory\imem$rdmux[0][5][0]$a$6745 [4:3] } = { 2'00 $memory\imem$rdmux[0][5][0]$a$6745 [10] 4'0000 $memory\imem$rdmux[0][5][0]$a$6745 [1] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][1]$6843:
+      Old ports: A=$memory\imem$rdmux[0][6][1]$a$6844, B=$memory\imem$rdmux[0][6][1]$b$6845, Y=$memory\imem$rdmux[0][5][0]$b$6746
+      New ports: A={ 1'0 $memory\imem$rdmux[0][6][1]$a$6844 [7] $memory\imem$rdmux[0][6][1]$a$6844 [7] $memory\imem$rdmux[0][6][1]$a$6844 [2] $memory\imem$rdmux[0][6][1]$a$6844 [2] 1'0 }, B={ 1'1 $memory\imem$rdmux[0][6][1]$b$6845 [3] $memory\imem$rdmux[0][6][1]$b$6845 [0] $memory\imem$rdmux[0][6][1]$b$6845 [3] 1'0 $memory\imem$rdmux[0][6][1]$b$6845 [0] }, Y={ $memory\imem$rdmux[0][5][0]$b$6746 [10:9] $memory\imem$rdmux[0][5][0]$b$6746 [7] $memory\imem$rdmux[0][5][0]$b$6746 [3:2] $memory\imem$rdmux[0][5][0]$b$6746 [0] }
+      New connections: { $memory\imem$rdmux[0][5][0]$b$6746 [15:11] $memory\imem$rdmux[0][5][0]$b$6746 [8] $memory\imem$rdmux[0][5][0]$b$6746 [6:4] $memory\imem$rdmux[0][5][0]$b$6746 [1] } = { 2'00 $memory\imem$rdmux[0][5][0]$b$6746 [7] 7'0100000 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][4]$6852:
+      Old ports: A=$memory\imem$rdmux[0][6][4]$a$6853, B=$memory\imem$rdmux[0][6][4]$b$6854, Y=$memory\imem$rdmux[0][5][2]$a$6751
+      New ports: A={ $memory\imem$rdmux[0][6][4]$a$6853 [3] 1'1 $memory\imem$rdmux[0][6][4]$a$6853 [11] $memory\imem$rdmux[0][6][4]$a$6853 [11] $memory\imem$rdmux[0][6][4]$a$6853 [3] 1'0 $memory\imem$rdmux[0][6][4]$a$6853 [3] $memory\imem$rdmux[0][6][4]$a$6853 [3] 2'10 }, B={ $memory\imem$rdmux[0][6][4]$b$6854 [1] 1'0 $memory\imem$rdmux[0][6][4]$b$6854 [1] 4'1011 $memory\imem$rdmux[0][6][4]$b$6854 [0] $memory\imem$rdmux[0][6][4]$b$6854 [1:0] }, Y={ $memory\imem$rdmux[0][5][2]$a$6751 [15:13] $memory\imem$rdmux[0][5][2]$a$6751 [11:9] $memory\imem$rdmux[0][5][2]$a$6751 [5] $memory\imem$rdmux[0][5][2]$a$6751 [3] $memory\imem$rdmux[0][5][2]$a$6751 [1:0] }
+      New connections: { $memory\imem$rdmux[0][5][2]$a$6751 [12] $memory\imem$rdmux[0][5][2]$a$6751 [8:6] $memory\imem$rdmux[0][5][2]$a$6751 [4] $memory\imem$rdmux[0][5][2]$a$6751 [2] } = { 2'11 $memory\imem$rdmux[0][5][2]$a$6751 [3] $memory\imem$rdmux[0][5][2]$a$6751 [5] 1'1 $memory\imem$rdmux[0][5][2]$a$6751 [1] }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][3]$6849:
+      Old ports: A=$memory\imem$rdmux[0][6][3]$a$6850, B=$memory\imem$rdmux[0][6][3]$b$6851, Y=$memory\imem$rdmux[0][5][1]$b$6749
+      New ports: A={ $memory\imem$rdmux[0][6][3]$a$6850 [0] 1'0 $memory\imem$rdmux[0][6][3]$a$6850 [5] $memory\imem$rdmux[0][6][3]$a$6850 [5] 1'0 $memory\imem$rdmux[0][6][3]$a$6850 [0] $memory\imem$rdmux[0][6][3]$a$6850 [0] }, B={ 1'1 $memory\imem$rdmux[0][6][3]$b$6851 [0] $memory\imem$rdmux[0][6][3]$b$6851 [1] 1'0 $memory\imem$rdmux[0][6][3]$b$6851 [1] $memory\imem$rdmux[0][6][3]$b$6851 [1:0] }, Y={ $memory\imem$rdmux[0][5][1]$b$6749 [10:8] $memory\imem$rdmux[0][5][1]$b$6749 [5] $memory\imem$rdmux[0][5][1]$b$6749 [2:0] }
+      New connections: { $memory\imem$rdmux[0][5][1]$b$6749 [15:11] $memory\imem$rdmux[0][5][1]$b$6749 [7:6] $memory\imem$rdmux[0][5][1]$b$6749 [4:3] } = { $memory\imem$rdmux[0][5][1]$b$6749 [2] $memory\imem$rdmux[0][5][1]$b$6749 [5] 4'0100 $memory\imem$rdmux[0][5][1]$b$6749 [2] $memory\imem$rdmux[0][5][1]$b$6749 [2] 1'0 }
+  Optimizing cells in module \tinyai16_cpu.
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][5][0]$6744:
+      Old ports: A=$memory\imem$rdmux[0][5][0]$a$6745, B=$memory\imem$rdmux[0][5][0]$b$6746, Y=$memory\imem$rdmux[0][4][0]$a$6697
+      New ports: A={ $memory\imem$rdmux[0][5][0]$a$6745 [10] 1'0 $memory\imem$rdmux[0][5][0]$a$6745 [10:9] 1'0 $memory\imem$rdmux[0][5][0]$a$6745 [5] 1'0 $memory\imem$rdmux[0][5][0]$a$6745 [2:0] }, B={ $memory\imem$rdmux[0][5][0]$b$6746 [7] 1'1 $memory\imem$rdmux[0][5][0]$b$6746 [10:9] $memory\imem$rdmux[0][5][0]$b$6746 [7] 1'0 $memory\imem$rdmux[0][5][0]$b$6746 [3:2] 1'0 $memory\imem$rdmux[0][5][0]$b$6746 [0] }, Y={ $memory\imem$rdmux[0][4][0]$a$6697 [13] $memory\imem$rdmux[0][4][0]$a$6697 [11:9] $memory\imem$rdmux[0][4][0]$a$6697 [7] $memory\imem$rdmux[0][4][0]$a$6697 [5] $memory\imem$rdmux[0][4][0]$a$6697 [3:0] }
+      New connections: { $memory\imem$rdmux[0][4][0]$a$6697 [15:14] $memory\imem$rdmux[0][4][0]$a$6697 [12] $memory\imem$rdmux[0][4][0]$a$6697 [8] $memory\imem$rdmux[0][4][0]$a$6697 [6] $memory\imem$rdmux[0][4][0]$a$6697 [4] } = { 4'0000 $memory\imem$rdmux[0][4][0]$a$6697 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][5][2]$6750:
+      Old ports: A=$memory\imem$rdmux[0][5][2]$a$6751, B=$memory\imem$rdmux[0][5][2]$b$6752, Y=$memory\imem$rdmux[0][4][1]$a$6700
+      New ports: A={ $memory\imem$rdmux[0][5][2]$a$6751 [15:13] $memory\imem$rdmux[0][5][2]$a$6751 [11:9] 1'1 $memory\imem$rdmux[0][5][2]$a$6751 [3] $memory\imem$rdmux[0][5][2]$a$6751 [5] $memory\imem$rdmux[0][5][2]$a$6751 [5] 1'1 $memory\imem$rdmux[0][5][2]$a$6751 [3] $memory\imem$rdmux[0][5][2]$a$6751 [1] $memory\imem$rdmux[0][5][2]$a$6751 [1:0] }, B={ 1'0 $memory\imem$rdmux[0][5][2]$b$6752 [14] $memory\imem$rdmux[0][5][2]$b$6752 [9] 1'1 $memory\imem$rdmux[0][5][2]$b$6752 [10:9] $memory\imem$rdmux[0][5][2]$b$6752 [0] $memory\imem$rdmux[0][5][2]$b$6752 [0] $memory\imem$rdmux[0][5][2]$b$6752 [0] 1'0 $memory\imem$rdmux[0][5][2]$b$6752 [4] $memory\imem$rdmux[0][5][2]$b$6752 [2] $memory\imem$rdmux[0][5][2]$b$6752 [2] 1'1 $memory\imem$rdmux[0][5][2]$b$6752 [0] }, Y={ $memory\imem$rdmux[0][4][1]$a$6700 [15:13] $memory\imem$rdmux[0][4][1]$a$6700 [11:0] }
+      New connections: $memory\imem$rdmux[0][4][1]$a$6700 [12] = 1'1
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][5][1]$6747:
+      Old ports: A=$memory\imem$rdmux[0][5][1]$a$6748, B=$memory\imem$rdmux[0][5][1]$b$6749, Y=$memory\imem$rdmux[0][4][0]$b$6698
+      New ports: A={ $memory\imem$rdmux[0][5][1]$a$6748 [3] 1'0 $memory\imem$rdmux[0][5][1]$a$6748 [6] 1'0 $memory\imem$rdmux[0][5][1]$a$6748 [4] 1'0 $memory\imem$rdmux[0][5][1]$a$6748 [7:1] 1'0 }, B={ $memory\imem$rdmux[0][5][1]$b$6749 [2] $memory\imem$rdmux[0][5][1]$b$6749 [5] 1'0 $memory\imem$rdmux[0][5][1]$b$6749 [10:8] 1'0 $memory\imem$rdmux[0][5][1]$b$6749 [2] $memory\imem$rdmux[0][5][1]$b$6749 [5] $memory\imem$rdmux[0][5][1]$b$6749 [2] 1'0 $memory\imem$rdmux[0][5][1]$b$6749 [2:0] }, Y={ $memory\imem$rdmux[0][4][0]$b$6698 [15:13] $memory\imem$rdmux[0][4][0]$b$6698 [10:0] }
+      New connections: $memory\imem$rdmux[0][4][0]$b$6698 [12:11] = 2'10
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 21 changes.
+
+3.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+3.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 493 unused wires.
+<suppressed ~1 debug messages>
+
+3.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+3.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][1]$6843:
+      Old ports: A={ 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'0 }, B={ 1'1 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [9] 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [6] }, Y={ $memory\imem$rdmux[0][5][0]$b$6746 [10:9] $memory\imem$rdmux[0][5][0]$b$6746 [13] $memory\imem$rdmux[0][5][0]$b$6746 [3:2] $memory\imem$rdmux[0][5][0]$b$6746 [0] }
+      New ports: A={ 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'0 }, B={ 1'1 $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [9] 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [6] }, Y={ $memory\imem$rdmux[0][5][0]$b$6746 [10] $memory\imem$rdmux[0][5][0]$b$6746 [13] $memory\imem$rdmux[0][5][0]$b$6746 [3:2] $memory\imem$rdmux[0][5][0]$b$6746 [0] }
+      New connections: $memory\imem$rdmux[0][5][0]$b$6746 [9] = $memory\imem$rdmux[0][6][0]$a$6841 [9]
+    Consolidated identical input bits for $mux cell $memory\imem$rdmux[0][6][4]$6852:
+      Old ports: A={ $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'1 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [6] 2'10 }, B={ $memory\imem$rdmux[0][6][0]$a$6841 [9] 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [9] 4'1011 $memory\imem$rdmux[0][6][0]$a$6841 [6] $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] }, Y={ $memory\imem$rdmux[0][5][2]$a$6751 [15:13] $memory\imem$rdmux[0][5][2]$a$6751 [11:9] $memory\imem$rdmux[0][5][2]$a$6751 [6] $memory\imem$rdmux[0][5][2]$a$6751 [7] $memory\imem$rdmux[0][5][2]$a$6751 [2] $memory\imem$rdmux[0][5][2]$a$6751 [0] }
+      New ports: A={ $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'1 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] 1'0 $memory\imem$rdmux[0][6][0]$a$6841 [6] 2'10 }, B={ $memory\imem$rdmux[0][6][0]$a$6841 [9] 5'01011 $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] }, Y={ $memory\imem$rdmux[0][5][2]$a$6751 [15:14] $memory\imem$rdmux[0][5][2]$a$6751 [11:9] $memory\imem$rdmux[0][5][2]$a$6751 [6] $memory\imem$rdmux[0][5][2]$a$6751 [2] $memory\imem$rdmux[0][5][2]$a$6751 [0] }
+      New connections: { $memory\imem$rdmux[0][5][2]$a$6751 [13] $memory\imem$rdmux[0][5][2]$a$6751 [7] } = { $memory\imem$rdmux[0][6][0]$a$6841 [9] $memory\imem$rdmux[0][6][0]$a$6841 [6] }
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 2 changes.
+
+3.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.29.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.29.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tinyai16_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+3.29.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tinyai16_cpu.
+Performed a total of 0 changes.
+
+3.29.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.29.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.29.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.29.23. Finished OPT passes. (There is nothing left to do.)
+
+3.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.31. Executing TECHMAP pass (map to technology primitives).
+
+3.31.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.31.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+3.31.3. Continuing TECHMAP pass.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_80_ice40_alu for cells of type $alu.
+Using template $paramod$e85bcdd999a9f7e1064fcb77207041270947b77a\_90_pmux for cells of type $pmux.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$19dee4f4a0fa5107148f98023a31266fe6d4ea0b\_90_pmux for cells of type $pmux.
+Using template $paramod$d6eefa73b09c260984bb3ab238c3c05801fa9e82\_90_pmux for cells of type $pmux.
+Using extmapper maccmap for cells of type $macc.
+  add $4$mem2reg_rd$\regs$tinyai16_cpu.v:50$9_DATA[15:0]$147 (16 bits, unsigned)
+  add $0$mem2reg_rd$\regs$tinyai16_cpu.v:22$2_DATA[15:0]$181 * $0$mem2reg_rd$\regs$tinyai16_cpu.v:26$4_DATA[15:0]$187 (16x16 bits, signed)
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~948 debug messages>
+
+3.32. Executing OPT pass (performing simple optimizations).
+
+3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~1801 debug messages>
+
+3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~2661 debug messages>
+Removed a total of 887 cells.
+
+3.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 134 unused cells and 1882 unused wires.
+<suppressed ~135 debug messages>
+
+3.32.5. Finished fast OPT passes.
+
+3.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$alumacc.cc:485:replace_alu$6617.slice[0].carry: CO=\pc [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[0].carry: CO=1'0
+
+3.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~4 debug messages>
+
+3.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.7. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[1].carry: CO=1'0
+
+3.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.13. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[2].carry: CO=1'0
+
+3.33.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.18. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.19. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[3].carry: CO=1'0
+
+3.33.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.22. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.24. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.25. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[4].carry: CO=1'0
+
+3.33.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.28. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.30. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.31. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[5].carry: CO=1'0
+
+3.33.32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.34. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.36. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.37. Running ICE40 specific optimizations.
+
+3.33.38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.33.39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.33.40. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.33.42. Finished OPT passes. (There is nothing left to do.)
+
+3.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.35. Executing TECHMAP pass (map to technology primitives).
+
+3.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.35.2. Continuing TECHMAP pass.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
+Using template \$_DFF_PP0_ for cells of type $_DFF_PP0_.
+Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+No more expansions possible.
+<suppressed ~1311 debug messages>
+
+3.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping tinyai16_cpu.$auto$alumacc.cc:485:replace_alu$6617.slice[0].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[0].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[1].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[2].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[3].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[4].carry ($lut).
+Mapping tinyai16_cpu.$auto$maccmap.cc:240:synth$11304.slice[5].carry ($lut).
+
+3.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.38.1. Running ICE40 specific optimizations.
+
+3.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+<suppressed ~119 debug messages>
+
+3.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+<suppressed ~825 debug messages>
+Removed a total of 275 cells.
+
+3.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+Removed 6 unused cells and 7005 unused wires.
+<suppressed ~7 debug messages>
+
+3.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.7. Running ICE40 specific optimizations.
+
+3.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tinyai16_cpu.
+
+3.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tinyai16_cpu'.
+Removed a total of 0 cells.
+
+3.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tinyai16_cpu..
+
+3.38.12. Finished OPT passes. (There is nothing left to do.)
+
+3.39. Executing TECHMAP pass (map to technology primitives).
+
+3.39.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+3.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.40. Executing ABC pass (technology mapping using ABC).
+
+3.40.1. Extracting gate netlist of module `\tinyai16_cpu' to `<abc-temp-dir>/input.blif'..
+Extracted 5272 gates and 6627 wires to a netlist network with 1353 inputs and 203 outputs.
+
+3.40.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =     872.
+ABC: Participating nodes from both networks       =    2030.
+ABC: Participating nodes from the first network   =     892. (  45.93 % of nodes)
+ABC: Participating nodes from the second network  =    1138. (  58.60 % of nodes)
+ABC: Node pairs (any polarity)                    =     892. (  45.93 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     720. (  37.08 % of names can be moved)
+ABC: Total runtime =     0.14 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+3.40.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:     1940
+ABC RESULTS:        internal signals:     5071
+ABC RESULTS:           input signals:     1353
+ABC RESULTS:          output signals:      203
+Removing temp directory.
+
+3.41. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.42. Executing TECHMAP pass (map to technology primitives).
+
+3.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 6 unused cells and 2348 unused wires.
+
+3.43. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:     2003
+  1-LUT               22
+  2-LUT              378
+  3-LUT              360
+  4-LUT             1243
+  with \SB_CARRY    (#0)   57
+  with \SB_CARRY    (#1)   57
+
+Eliminating LUTs.
+Number of LUTs:     2003
+  1-LUT               22
+  2-LUT              378
+  3-LUT              360
+  4-LUT             1243
+  with \SB_CARRY    (#0)   57
+  with \SB_CARRY    (#1)   57
+
+Combining LUTs.
+Number of LUTs:     1995
+  1-LUT               21
+  2-LUT              378
+  3-LUT              346
+  4-LUT             1250
+  with \SB_CARRY    (#0)   57
+  with \SB_CARRY    (#1)   57
+
+Eliminated 0 LUTs.
+Combined 8 LUTs.
+<suppressed ~14127 debug messages>
+
+3.44. Executing TECHMAP pass (map to technology primitives).
+
+3.44.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.44.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101011 for cells of type $lut.
+Using template $paramod$1360f2ce6b943fa5302057e0adcadcb97e8fa937\$lut for cells of type $lut.
+Using template $paramod$41326ad8644342a66dfb051d050f2b6fbf15015b\$lut for cells of type $lut.
+Using template $paramod$12cfdf43260b81d23ebf000df75507a05511bf2d\$lut for cells of type $lut.
+Using template $paramod$9654c32a65d135229abe8e13b8fcc4c8ab979b5d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010000 for cells of type $lut.
+Using template $paramod$099ac8b11a70529a8e249a5b1b20b37a0be6d367\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$6459d1a545bd0e9d4d14036a93c6c6ffd5af634b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$e053a22d78e6bd5ea33183ea69976f0db741be0e\$lut for cells of type $lut.
+Using template $paramod$c7643d93c6710d1f52fb7e7cb047a4e560bda904\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod$b93d1ea7a612a32c185108f67a153d44ffb9aac2\$lut for cells of type $lut.
+Using template $paramod$1bf62ab10e48d71d6497bccacf5c70420c470fe9\$lut for cells of type $lut.
+Using template $paramod$d178ca71155f98b026f167efe9cf809b080993c9\$lut for cells of type $lut.
+Using template $paramod$bba54c1ef87367812b4c15f4aed5ac70773df775\$lut for cells of type $lut.
+Using template $paramod$6b8d457878c479ad7aa988b9e9baf66643bed25a\$lut for cells of type $lut.
+Using template $paramod$ae93f704140d3bfd22c46f899eab0552790ced99\$lut for cells of type $lut.
+Using template $paramod$11ec7271d8e6e5aeaace08c13e4c601f10e31038\$lut for cells of type $lut.
+Using template $paramod$71cdbec5e1313906b6bbaafd2ecab2abcc5d68cf\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00111010 for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$c1a19a87ccbbb03d43a72335db63f692ddf82cc1\$lut for cells of type $lut.
+Using template $paramod$c63acbf566091101be292f60e58d5c57a35bbba3\$lut for cells of type $lut.
+Using template $paramod$3e8d0aa900463bbdc955d11c0603f5479307c386\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001011 for cells of type $lut.
+Using template $paramod$c5b694ec89d7629b942ccf6a9be1d39e24f8edec\$lut for cells of type $lut.
+Using template $paramod$a15fd389a2f54cb7b94707b25934d226e68d9e2e\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
+Using template $paramod$ecc6a65b93b0f202abee5fe231bbde1c0907d35a\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$1674868d909954f1798905b10bc8fc182227e6d9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
+Using template $paramod$5a621b016c894274d07edef48c49b401a15fd796\$lut for cells of type $lut.
+Using template $paramod$4613ac811d54a7344e5fa56d51722e82a64ecb8c\$lut for cells of type $lut.
+Using template $paramod$7843e8c123bb8acf2cb35298776a29dcf1524827\$lut for cells of type $lut.
+Using template $paramod$3d4f386a402395482bb3a56159e7ad913d874bd8\$lut for cells of type $lut.
+Using template $paramod$85b779ce5ab505dbf25e5e046fb43ca2b76b878b\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod$4b2297966ddb718657b80566604f97685ffc0120\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$179512a187da069f3b79ef6612a41e494e7d54b6\$lut for cells of type $lut.
+Using template $paramod$cc08dba3aac8677e797984bdf18a09dd37547dd3\$lut for cells of type $lut.
+Using template $paramod$0cf69d223154b4a6209139daec3524052ac22dd1\$lut for cells of type $lut.
+Using template $paramod$c80a3f83d1d118a21306c2531f1e4f6fe24b9819\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$2bdfdda73873e8931790d872b72220895e67fee5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110001 for cells of type $lut.
+Using template $paramod$868427562418b5dc988caeac6a54689ec9c9025e\$lut for cells of type $lut.
+Using template $paramod$24ced899438e172604a424008974634c832673b7\$lut for cells of type $lut.
+Using template $paramod$5b13d2ee598c87cdbe912286a35c6fd102e2087c\$lut for cells of type $lut.
+Using template $paramod$4f2ff369e573efd7ef2034d2c1f6c1a1cc73b2b7\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$279a8d961e6b2ded8450bee8ed637cb9efa31f02\$lut for cells of type $lut.
+Using template $paramod$53ce561f80f32d4298a3beadc88b6c5c78293221\$lut for cells of type $lut.
+Using template $paramod$1f3b67373a23476b64a6ed61bde9dbe9df1086de\$lut for cells of type $lut.
+Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$d53578aacfd93124244778d88be0e90eb09c1b1b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
+Using template $paramod$6ce6c9ed24092f88d858965e9e9a15c5bec9d6d7\$lut for cells of type $lut.
+Using template $paramod$acf49cb7bd2805dee4b4ebb218aa5924b1be7704\$lut for cells of type $lut.
+Using template $paramod$7d791c2363f4f019348f93a148b2a44b4ba6b5b3\$lut for cells of type $lut.
+Using template $paramod$400e70ab40bc034f95288d674157da21bbd1fd4b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod$33af9a654d0d8767ce4253c1bfd82206f064cd49\$lut for cells of type $lut.
+Using template $paramod$78e1751931755f088c8bc676bcbc3bb642c26bfc\$lut for cells of type $lut.
+Using template $paramod$595b4955041ceff09e28d600fe79275c24ba9878\$lut for cells of type $lut.
+Using template $paramod$f43e533b16c4b44c0f5eeb593a0196cce2e80c58\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010100 for cells of type $lut.
+Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod$94ac66a11090dca84889e55fcf03297912a5b7ec\$lut for cells of type $lut.
+Using template $paramod$50b99034fbf984a51c265442496081454147f31e\$lut for cells of type $lut.
+Using template $paramod$59c595af41d4a5cce2d588c3a5f1342749ce7a77\$lut for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod$69f20e0703606f2ffd2ee27cd26f815bd5eeb6e9\$lut for cells of type $lut.
+Using template $paramod$5c32c59025c0b98f20e63f249d83e7ebb4b085e3\$lut for cells of type $lut.
+Using template $paramod$d35161d1d7976dcc02e7c7d51172431be85143b4\$lut for cells of type $lut.
+Using template $paramod$fb5ee0bdef1c4e74aaf1fd8efae98b46a2f5e564\$lut for cells of type $lut.
+Using template $paramod$7db80a93c7c798c00e91ddd3fe6394daec80a6c1\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+No more expansions possible.
+<suppressed ~3389 debug messages>
+Removed 0 unused cells and 5073 unused wires.
+
+3.45. Executing AUTONAME pass.
+Renamed 97859 objects in module tinyai16_cpu (135 iterations).
+<suppressed ~4116 debug messages>
+
+3.46. Executing HIERARCHY pass (managing design hierarchy).
+
+3.46.1. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+
+3.46.2. Analyzing design hierarchy..
+Top module:  \tinyai16_cpu
+Removed 0 unused modules.
+
+3.47. Printing statistics.
+
+=== tinyai16_cpu ===
+
+   Number of wires:                869
+   Number of wire bits:           4091
+   Number of public wires:         869
+   Number of public wire bits:    4091
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3341
+     SB_CARRY                       57
+     SB_DFFE                      1024
+     SB_DFFER                      264
+     SB_DFFR                         1
+     SB_LUT4                      1995
+
+3.48. Executing CHECK pass (checking for obvious problems).
+Checking module tinyai16_cpu...
+Found and reported 0 problems.
+
+3.49. Executing JSON backend.
+
+4. Printing statistics.
+
+=== tinyai16_cpu ===
+
+   Number of wires:                869
+   Number of wire bits:           4091
+   Number of public wires:         869
+   Number of public wire bits:    4091
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3341
+     SB_CARRY                       57
+     SB_DFFE                      1024
+     SB_DFFER                      264
+     SB_DFFR                         1
+     SB_LUT4                      1995
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 607d3bc8ca, CPU: user 7.80s system 0.05s, MEM: 278.39 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 26% 29x opt_expr (2 sec), 15% 1x abc (1 sec), ...
+

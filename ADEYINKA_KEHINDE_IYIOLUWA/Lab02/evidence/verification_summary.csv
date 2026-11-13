@@ -1,0 +1,7 @@
+test,cycles,halt_pc,status
+1,13,12,PASS
+2,11,10,PASS
+3,11,10,PASS
+4,15,14,PASS
+5,23,18,PASS
+6,4,2,PASS

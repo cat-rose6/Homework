@@ -1,0 +1,15 @@
+{
+  "neuron_simulation_pass": true,
+  "six_extended_tests_pass": true,
+  "FPGA_target": "iCE40 HX8K CT256",
+  "requested_clock_MHz": 10,
+  "fpga_synthesis_pass": true,
+  "fpga_place_route_pass": true,
+  "bitstream_generated": true,
+  "generic_asic_synthesis_pass": true,
+  "physical_FPGA_tested": false,
+  "OpenLane_layout_completed": false,
+  "estimated_Fmax_MHz": 35.55,
+  "logic_cells_used": 3279,
+  "logic_cells_available": 7680
+}
