@@ -1,0 +1,97 @@
+Homework - Amna Komal Khan (Student ID: 2690013)
+
+Introduction of Intelligent Computing Chip and System - Build a Simple RISC ISA
+
+Instructor: Prof. Shiwei Liu | Tongji University
+
+
+
+FILES IN THIS FOLDER
+
+- Homework 2.pdf     : Final homework report (ISA specification, machine code table, RTL bug fixes, and corner-case waveform analysis)
+
+- ai_processor_fig1_baseline.v                 : Verilog RTL source code and testbench for the baseline 2-input neuron simulation (generates Figure 1 data)
+
+- ai_processor_fig2_corner_cases.v             : Upgraded Verilog RTL source code with 4-bit Status Register (N, V, Z, C) and 4-scenario testbench (generates Figure 2 data)
+
+- run_simulations_and_plot_fig1_fig2.py        : Python automation script that installs Icarus Verilog, compiles/runs both Verilog testbenches, and plots Figure 1 & Figure 2
+
+- [HOMEWORK 2].ipynb                   : Google Colab notebook containing the all-in-one execution cells
+
+- waveform.png                                 : Figure 1 (Cycle-by-cycle baseline neuron execution waveform)
+
+- waveform_corner_cases.png                    : Figure 2 (Multi-scenario accumulator & overflow flag verification)
+
+
+
+ENVIRONMENT
+
+- Platform: Google Colab (https://colab.research.google.com)
+
+- Runtime: Default Python 3 CPU runtime (No GPU required)
+
+- Simulator & Libraries:
+
+  * Icarus Verilog (iverilog & vvp) for hardware RTL compilation and cycle-accurate simulation
+
+  * Python 3 with numpy and matplotlib (pre-installed in Google Colab) for waveform plotting
+
+
+
+HOW TO RUN
+
+Option A: Running via Google Colab Notebook (.ipynb)
+
+1. Open https://colab.research.google.com and choose File > Upload notebook.
+
+2. Upload [Source_code_1] and [Source_code_2].ipynb from this folder.
+
+3. Run all cells: Runtime > Run all (or press Ctrl+F9).
+
+4. The notebook automatically installs Icarus Verilog, generates the .v files, executes the simulations, prints the register/memory tables, and saves waveform.png and waveform_corner_cases.png in the /content/ directory.
+
+
+
+
+
+TEST VECTORS AND ARCHITECTURAL SETTINGS
+
+- Architecture: 16-bit Single-Cycle RISC Load-Store AI Processor
+
+- Instruction Set: 4 instructions (Load, Store, MOV, MAC) with 3-bit Opcode
+
+- Register File: 16 entries x 16-bit (R0 hardwired to 0)
+
+- Memories: 32 x 16-bit Instruction Memory (icmem) and 32 x 16-bit Data Memory (dcmem)
+
+- Clock Frequency: 100 MHz (10 ns clock period, 13 clock cycles per 2-input neuron Y = x1*w1 + x2*w2 + b)
+
+- Test Scenarios (Preloaded in Data Memory via Testbench):
+
+  * Case 1 (Baseline Positive) : x = (2, 3), w = (4, 5), b = 1
+
+  * Case 2 (Signed Negative)   : x = (-6, 3), w = (4, -5), b = 10
+
+  * Case 3 (Positive Overflow) : x = (200, 150), w = (100, 100), b = 0
+
+  * Case 4 (Negative Underflow): x = (-200, -150), w = (100, 100), b = 0
+
+
+
+EXPECTED OUTPUT
+
+- Console Cycle-by-Cycle Trace Table (Figure 1 Baseline):
+
+  * Final computed neuron output in Register R5 and Memory MEM[ADY] (Address 6) = 24
+
+- Console Multi-Scenario Verification Table (Figure 2 Corner Cases):
+
+  * Case 1 Output: +24 (0x0018)     | Status Flags (N V Z C): 0 0 0 0
+
+  * Case 2 Output: -29 (0xFFE3)     | Status Flags (N V Z C): 1 0 0 1 (Negative flag N=1 asserted)
+
+  * Case 3 Output: -30536 (0x88B8)  | Status Flags (N V Z C): 1 1 0 0 (True +35000 wraps; Overflow V=1 asserted)
+
+  * Case 4 Output: +30536 (0x7748)  | Status Flags (N V Z C): 0 1 0 1 (True -35000 wraps; Overflow V=1 asserted)
+
+- Generated Plots: waveform.png and waveform_corner_cases.png saved to the working directory.
