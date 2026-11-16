@@ -9,7 +9,7 @@ The processor consists of the following modules:
 
 | Module | Function |
 |---|---|
-| `icmem` | Instruction memory and program counter (PC) |
+| `icmem` | Instruction memory and program counter |
 | `regfile` | Register file with two read ports and one write port |
 | `dcmem` | Data memory for input and output values |
 | `MAC_ALU` | Multiply-accumulate arithmetic unit |
